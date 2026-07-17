@@ -1,8 +1,18 @@
 from __future__ import annotations
-
+import os
+import sys
 import streamlit as st
 
+# 1. Garante que o Python encontre a pasta 'src' inserindo o diretório atual no topo do caminho de busca
+current_dir = os.path.dirname(os.path.abspath(__file__))
+if current_dir not in sys.path:
+    sys.path.insert(0, current_dir)
+
+# 2. Agora sim os imports do seu motor de risco funcionam sem dar erro
 from src.risk_engine import ValidationError, predict_complete_risk, predict_quick_screening
+
+# O restante do seu código continua idêntico abaixo...
+st.set_page_config(page_title="CardioSM | Estratificação de Risco", page_icon="♥", layout="wide", initial_sidebar_state="collapsed")
 
 st.set_page_config(page_title="CardioSM | Estratificação de Risco", page_icon="♥", layout="wide", initial_sidebar_state="collapsed")
 
