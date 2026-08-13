@@ -150,9 +150,9 @@ def main() -> None:
     render_header()
 
     quick_mode = st.toggle(
-        "Ativar Modo Triagem Rápida (Apenas 3 marcadores)",
+        "Ativar Modo Triagem Rápida (4 variáveis clínicas)",
         value=False,
-        help="Idade/sexo, pressão arterial sistólica e circunferência abdominal.",
+        help="Idade, sexo, pressão arterial sistólica e circunferência abdominal.",
     )
     render_mode_notice(quick_mode)
 
